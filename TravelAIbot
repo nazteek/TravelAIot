@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel & Pension Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .language {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Willkommen / Dobrodošli</h1>
+    <p>Bitte wählen Sie eine Sprache / Molimo odaberite jezik:</p>
+    <div class="language">
+      <button onclick="selectLanguage('de')">🇩🇪 Deutsch</button>
+      <button onclick="selectLanguage('hr')">🇭🇷 Hrvatski</button>
+    </div>
+    <div id="info" style="margin-top: 20px;"></div>
+  </div>
+
+  <script>
+    function selectLanguage(lang) {
+      const infoBox = document.getElementById("info");
+      if (lang === 'de') {
+        infoBox.innerHTML = `
+          <h3>Informationen</h3>
+          <ul>
+            <li>Frühstück: 7:30 - 10:00 Uhr</li>
+            <li>Check-In: ab 14:00 Uhr</li>
+            <li>WLAN: Kostenlos - Passwort an der Rezeption</li>
+          </ul>
+        `;
+      } else if (lang === 'hr') {
+        infoBox.innerHTML = `
+          <h3>Informacije</h3>
+          <ul>
+            <li>Doručak: 7:30 - 10:00 sati</li>
+            <li>Prijava: od 14:00 sati</li>
+            <li>Wi-Fi: Besplatan - lozinka na recepciji</li>
+          </ul>
+        `;
+      }
+    }
+  </script>
+
+  <!-- 💬 Tidio Chatbot Integration -->
+  <script src="//code.tidio.co/TIDIO_PUBLIC_KEY.js" async></script>
+
+</body>
+</html>
